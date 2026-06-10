@@ -1,0 +1,74 @@
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">Experience & <span>Education</span></h2>
+
+    <div class="exp-layout">
+      <!-- Work Experience Timeline -->
+      <div class="exp-col">
+        <h3 class="col-heading">Work Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="job-header">
+                <div>
+                  <h4 class="job-title">Senior Software Engineer</h4>
+                  <span class="job-sub">Full Stack .NET + React Developer</span>
+                </div>
+                <span class="job-period">Dec 2022 – Jun 2026</span>
+              </div>
+              <p class="job-company">
+                <span class="company-dot"></span>
+                Chetu India Pvt Ltd — Noida, India
+              </p>
+              <ul class="job-bullets">
+                <li>Designed and developed REST APIs and full-stack web applications using ASP.NET Core, React.js, Entity Framework, and SQL Server</li>
+                <li>Reduced database response time by 25% through advanced query tuning and indexing</li>
+                <li>Built reusable React components and backend modules, cutting development effort by 20%</li>
+                <li>Collaborated with QA, UI, and DevOps teams ensuring 99.9% uptime and release quality</li>
+                <li>Mentored junior engineers, conducted code reviews, and implemented CI/CD improvements</li>
+              </ul>
+              <div class="job-tech">
+                <span class="tag">ASP.NET Core</span>
+                <span class="tag">React.js</span>
+                <span class="tag">C#</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Twilio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education + Achievements -->
+      <div class="side-col">
+        <h3 class="col-heading">Education</h3>
+        <div class="edu-list">
+          @for (edu of education; track edu.degree) {
+            <div class="edu-card card">
+              <div class="edu-top">
+                <h4 class="edu-degree">{{ edu.degree }}</h4>
+                <span class="edu-period">{{ edu.period }}</span>
+              </div>
+              <p class="edu-inst">{{ edu.institution }}</p>
+              @if (edu.board) {
+                <p class="edu-board">{{ edu.board }}</p>
+              }
+            </div>
+          }
+        </div>
+
+        <h3 class="col-heading" style="margin-top: 40px;">Achievements</h3>
+        <div class="achievements-card card">
+          @for (a of achievements; track a) {
+            <div class="achievement-item">
+              <span class="ach-icon">✦</span>
+              <span>{{ a }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

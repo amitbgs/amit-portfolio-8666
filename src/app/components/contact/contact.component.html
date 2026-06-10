@@ -1,0 +1,66 @@
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+
+    <div class="contact-layout">
+      <div class="contact-left">
+        <p class="contact-intro">
+          I'm actively looking for senior full-stack opportunities. Whether you have a project,
+          a team that needs a .NET + React developer, or just want to say hello — my inbox is open.
+        </p>
+
+        <div class="contact-items">
+          @for (item of contactInfo; track item.label) {
+            <a [href]="item.href" class="contact-item" [target]="item.href.startsWith('http') ? '_blank' : '_self'">
+              <span class="contact-icon">{{ item.icon }}</span>
+              <div>
+                <span class="contact-label">{{ item.label }}</span>
+                <span class="contact-value">{{ item.value }}</span>
+              </div>
+            </a>
+          }
+        </div>
+
+        <div class="availability-box">
+          <span class="avail-dot"></span>
+          <div>
+            <p class="avail-title">Available for new roles</p>
+            <p class="avail-sub">Open to full-time, contract, and remote positions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="form-card card">
+          @if (!submitted()) {
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+              <div class="field">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" [(ngModel)]="form.name" name="name" required placeholder="John Doe">
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" [(ngModel)]="form.email" name="email" required placeholder="john@company.com">
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" [(ngModel)]="form.message" name="message" required rows="5" placeholder="Tell me about the role or project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary submit-btn" [disabled]="!f.valid">
+                Send Message
+                <span class="btn-arrow">→</span>
+              </button>
+            </form>
+          } @else {
+            <div class="success-state">
+              <div class="success-icon">✓</div>
+              <h3>Message sent!</h3>
+              <p>Your email client should open with the pre-filled message. Looking forward to connecting.</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Technical Expertise</p>
+    <h2 class="section-title">Skills & <span>Technologies</span></h2>
+
+    <div class="skills-grid">
+      @for (group of groups; track group.category) {
+        <div class="skill-card card">
+          <div class="skill-header">
+            <span class="skill-icon">{{ group.icon }}</span>
+            <h3>{{ group.category }}</h3>
+          </div>
+          <div class="skill-bars">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skill-bar-item">
+                <div class="skill-meta">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-pct">{{ skill.level }}%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill" [style.width.%]="skill.level"></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="tech-cloud">
+      <p class="cloud-label section-label">Full Tech Stack</p>
+      <div class="tags-wrap">
+        @for (tag of techTags; track tag) {
+          <span class="tag">{{ tag }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>
